@@ -162,7 +162,7 @@ void three(char ch[50], FILE *hard){
     char answer;
     int ans1;
     int score = 0;
-    char brr[20] = {'A','B','D','A','A','B','A','B','B','A','D','A','D','A','A','A','D','A'};
+    char brr[35] = {'A','B','D','A','A','B','A','B','B','A','D','A','D','A','A','A','D','A','A','A','A','B','A','A','C','A','A','A','A','A','A'};
 
     if (hard == NULL)
     {
