@@ -24,14 +24,14 @@ void one(char ch[50], FILE *easy){
     char answer;
     int ans1;
     int score = 0;
-    char brr[10] = {'A','B','D','A','A','B','A','B','B','A'};
+    char brr[20] = {'A','B','D','A','A','B','A','B','B','A','D','A','D','A','A','A','D','A'};
 
     if (easy == NULL)
     {
         printf("Unable to open the file");
     }
     else{
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 18; i++)
         {   
             arr[i] = fgets(ch,100,easy);
             printf(" %s\n",arr[i]);
@@ -77,21 +77,30 @@ void one(char ch[50], FILE *easy){
 
 void two(char ch[50], FILE *moderate){
 
+    FILE *hs;
+    int sh[5];
+    int highscore = 0;
+    // hs = fopen("highscore.txt" , "r");
+    
+    // int a = fscanf(hs,"%d",highscore);
+    // printf("Highscore is:  %c\n",a);
+
+    // fclose(hs);
     int streak = 0;
     time_t starttime, endtime;
     int elapsedtime;
     char *arr[100];
     char answer;
     int ans1;
-    int highscore = 0;
-    char brr[10] = {'A','B','D','A','A','B','A','B','B','A'};
+    int score = 0;
+    char brr[30] = {'A','B','D','A','A','B','A','B','B','A','D','A','D','A','A','A','D','A'};
 
     if (moderate == NULL)
     {
         printf("Unable to open the file");
     }
     else{
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 18; i++)
         {   
             arr[i] = fgets(ch,100,moderate);
             printf(" %s\n",arr[i]);
@@ -104,14 +113,14 @@ void two(char ch[50], FILE *moderate){
             
             printf("Time taken: %d seconds\n", elapsedtime);
             
-            if(elapsedtime > 20 && answer == brr[i]){
+            if(elapsedtime > 10 && answer == brr[i]){
                 printf("Time's up.... 100 points deducted.\n");
-                highscore = highscore - 100;
+                score = score - 100;
                 streak = 0;
             }
             else if(answer == brr[i]){
                 printf("Your answer is Correct!\n");
-                highscore = highscore + 100;
+                score = score + 100;
                 streak++;
             }
             else if(answer != brr[i]){
@@ -121,31 +130,46 @@ void two(char ch[50], FILE *moderate){
             
         }
     }
-    printf("Score Is: %d\n",highscore);
+    int a = score;
+    printf("Score Is: %d\n",score);
     printf("Winning streak is: %d",streak);
     fclose(moderate);
-    moderate = fopen("simple.txt" , "a");
-    fprintf(moderate,"\nYour high score is: %d",highscore);
-    fclose(moderate);
+    hs = fopen("highscore.txt" , "w");
+
+    if(highscore < score){ 
+        highscore = score;
+        }
+    fprintf(hs,"%d",highscore);
+    
+    fclose(hs);
 }
 
 void three(char ch[50], FILE *hard){
 
+    FILE *hs;
+    int sh[5];
+    int highscore = 0;
+    // hs = fopen("highscore.txt" , "r");
+    
+    // int a = fscanf(hs,"%d",highscore);
+    // printf("Highscore is:  %c\n",a);
+
+    // fclose(hs);
     int streak = 0;
     time_t starttime, endtime;
     int elapsedtime;
     char *arr[100];
     char answer;
     int ans1;
-    int highscore = 0;
-    char brr[10] = {'A','B','D','A','A','B','A','B','B','A'};
+    int score = 0;
+    char brr[20] = {'A','B','D','A','A','B','A','B','B','A','D','A','D','A','A','A','D','A'};
 
     if (hard == NULL)
     {
         printf("Unable to open the file");
     }
     else{
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 18; i++)
         {   
             arr[i] = fgets(ch,100,hard);
             printf(" %s\n",arr[i]);
@@ -158,14 +182,14 @@ void three(char ch[50], FILE *hard){
             
             printf("Time taken: %d seconds\n", elapsedtime);
             
-            if(elapsedtime > 30 && answer == brr[i]){
+            if(elapsedtime > 10 && answer == brr[i]){
                 printf("Time's up.... 100 points deducted.\n");
-                highscore = highscore - 100;
+                score = score - 100;
                 streak = 0;
             }
             else if(answer == brr[i]){
                 printf("Your answer is Correct!\n");
-                highscore = highscore + 100;
+                score = score + 100;
                 streak++;
             }
             else if(answer != brr[i]){
@@ -175,12 +199,18 @@ void three(char ch[50], FILE *hard){
             
         }
     }
-    printf("Score Is: %d\n",highscore);
+    int a = score;
+    printf("Score Is: %d\n",score);
     printf("Winning streak is: %d",streak);
     fclose(hard);
-    hard = fopen("simple.txt" , "a");
-    fprintf(hard,"\nYour high score is: %d",highscore);
-    fclose(hard);
+    hs = fopen("highscore.txt" , "w");
+
+    if(highscore < score){ 
+        highscore = score;
+        }
+    fprintf(hs,"%d",highscore);
+    
+    fclose(hs);
 }
 
 int main(){
