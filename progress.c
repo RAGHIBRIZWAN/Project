@@ -1,3 +1,9 @@
+/*
+    Programmer: Raghib Rizwan Rabani
+    Roll No: 23K-0012
+    Desc: Mathematics quiz project
+*/
+
 #include <stdio.h>
 #include<stdlib.h>
 #include<conio.h>
@@ -6,6 +12,7 @@
 #include <windows.h>
 #include<unistd.h>
 
+// Function when user choose difficulty level (easy)
 void one(char ch[50], FILE *easy){
 
     FILE *hs;
@@ -35,12 +42,12 @@ void one(char ch[50], FILE *easy){
         {   
             arr[i] = fgets(ch,100,easy);
             printf(" %s\n",arr[i]);
-            time(&starttime);
+            time(&starttime); // timer start
             printf("Enter the answer: ");
             scanf(" %c",&answer);
             getchar();
-            time(&endtime);
-            elapsedtime = difftime(endtime,starttime);   
+            time(&endtime); // timer stop
+            elapsedtime = difftime(endtime,starttime); // time elapsed   
             
             printf("Time taken: %d seconds\n", elapsedtime);
             
@@ -59,22 +66,23 @@ void one(char ch[50], FILE *easy){
                 streak = 0;
             }
             
-        }
+        } // End for
     }
     int a = score;
     printf("Score Is: %d\n",score);
     printf("Winning streak is: %d",streak);
-    fclose(easy);
-    hs = fopen("highscore.txt" , "w");
+    fclose(easy);// file close
+    hs = fopen("highscore.txt" , "w"); // file open
 
     if(highscore < score){ 
         highscore = score;
         }
     fprintf(hs,"%d",highscore);
     
-    fclose(hs);
-}
+    fclose(hs); // file close
+}// End function
 
+// Function when user choose difficulty level (moderate)
 void two(char ch[50], FILE *moderate){
 
     FILE *hs;
@@ -104,12 +112,12 @@ void two(char ch[50], FILE *moderate){
         {   
             arr[i] = fgets(ch,100,moderate);
             printf(" %s\n",arr[i]);
-            time(&starttime);
+            time(&starttime);//time start
             printf("Enter the answer: ");
             scanf(" %c",&answer);
             getchar();
-            time(&endtime);
-            elapsedtime = difftime(endtime,starttime);   
+            time(&endtime);//time stop
+            elapsedtime = difftime(endtime,starttime); // elapsed time   
             
             printf("Time taken: %d seconds\n", elapsedtime);
             
@@ -128,22 +136,23 @@ void two(char ch[50], FILE *moderate){
                 streak = 0;
             }
             
-        }
+        }// End for
     }
     int a = score;
     printf("Score Is: %d\n",score);
     printf("Winning streak is: %d",streak);
-    fclose(moderate);
-    hs = fopen("highscore.txt" , "w");
+    fclose(moderate); //file close
+    hs = fopen("highscore.txt" , "w"); // file open
 
     if(highscore < score){ 
         highscore = score;
         }
     fprintf(hs,"%d",highscore);
     
-    fclose(hs);
-}
+    fclose(hs); // file close
+}// End function
 
+// Function when user choose difficulty level (hard)
 void three(char ch[50], FILE *hard){
 
     FILE *hs;
@@ -173,12 +182,12 @@ void three(char ch[50], FILE *hard){
         {   
             arr[i] = fgets(ch,100,hard);
             printf(" %s\n",arr[i]);
-            time(&starttime);
+            time(&starttime); // Start time
             printf("Enter the answer: ");
             scanf(" %c",&answer);
             getchar();
-            time(&endtime);
-            elapsedtime = difftime(endtime,starttime);   
+            time(&endtime); // End time
+            elapsedtime = difftime(endtime,starttime); // Time Elapsed   
             
             printf("Time taken: %d seconds\n", elapsedtime);
             
@@ -197,21 +206,21 @@ void three(char ch[50], FILE *hard){
                 streak = 0;
             }
             
-        }
+        }// End for
     }
     int a = score;
     printf("Score Is: %d\n",score);
     printf("Winning streak is: %d",streak);
-    fclose(hard);
-    hs = fopen("highscore.txt" , "w");
+    fclose(hard);//file close
+    hs = fopen("highscore.txt" , "w"); // file open 
 
     if(highscore < score){ 
         highscore = score;
         }
     fprintf(hs,"%d",highscore);
     
-    fclose(hs);
-}
+    fclose(hs); // file close
+}//End function
 
 int main(){
     char name[50];
@@ -219,9 +228,9 @@ int main(){
     int diff;
     char answer;
     char ch[10];
-    FILE *easy = fopen("simple.txt" , "r");
-    FILE *moderate = fopen("moderate.txt", "r");
-    FILE *hard = fopen("hard.txt", "r");
+    FILE *easy = fopen("simple.txt" , "r"); //file open
+    FILE *moderate = fopen("moderate.txt", "r"); //file open
+    FILE *hard = fopen("hard.txt", "r"); //file open
 
     printf("Enter yourn name:");
     gets(name);
@@ -253,7 +262,7 @@ int main(){
     default:
         exit(1);
         break;
-    }
+    } // End Switch
 
     printf("Select Difficulty: \n");
     printf("1. Easy    2. Moderate    3. Hard:  ");
@@ -278,5 +287,5 @@ int main(){
     
     default:
         break;
-    }
-}
+    } // End Switch
+} // End main
