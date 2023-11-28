@@ -1,6 +1,6 @@
 /*
-    Programmer: Raghib Rizwan Rabani
-    Roll No: 23K-0012
+    Programmer: Raghib Rizwan Rabani, Hafsa Rashid, Arwa Feroze.
+    Roll No: 23K-0012, 23K-0064, 23K-0022.
     Desc: Mathematics quiz project
 */
 
