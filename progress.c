@@ -12,7 +12,7 @@
 #include <windows.h>
 #include<unistd.h>
 
-// Function when user choose difficulty level (easy)
+// Function for difficulty level (easy)
 void one(char ch[50], FILE *easy){
 
     FILE *hs;
@@ -51,13 +51,13 @@ void one(char ch[50], FILE *easy){
             
             printf("Time taken: %d seconds\n", elapsedtime);
             
-            if(elapsedtime > 10 && answer == brr[i]){
+            if(elapsedtime > 10){
                 printf("Time's up.... 100 points deducted.\n");
                 score = score - 100;
                 streak = 0;
             }
             else if(answer == brr[i]){
-                printf("Your answer is Correct!\n");
+                printf("Your answer is Correct!..... 100 points added.\n");
                 score = score + 100;
                 streak++;
             }
@@ -82,7 +82,7 @@ void one(char ch[50], FILE *easy){
     fclose(hs); // file close
 }// End function
 
-// Function when user choose difficulty level (moderate)
+// Function for difficulty level (moderate)
 void two(char ch[50], FILE *moderate){
 
     FILE *hs;
@@ -121,13 +121,13 @@ void two(char ch[50], FILE *moderate){
             
             printf("Time taken: %d seconds\n", elapsedtime);
             
-            if(elapsedtime > 10 && answer == brr[i]){
+            if(elapsedtime > 10){
                 printf("Time's up.... 100 points deducted.\n");
                 score = score - 100;
                 streak = 0;
             }
             else if(answer == brr[i]){
-                printf("Your answer is Correct!\n");
+                printf("Your answer is Correct!...... 100 points added.\n");
                 score = score + 100;
                 streak++;
             }
@@ -152,7 +152,8 @@ void two(char ch[50], FILE *moderate){
     fclose(hs); // file close
 }// End function
 
-// Function when user choose difficulty level (hard)
+// Function for 
+difficulty level (hard)
 void three(char ch[50], FILE *hard){
 
     FILE *hs;
@@ -191,13 +192,13 @@ void three(char ch[50], FILE *hard){
             
             printf("Time taken: %d seconds\n", elapsedtime);
             
-            if(elapsedtime > 10 && answer == brr[i]){
+            if(elapsedtime > 10){
                 printf("Time's up.... 100 points deducted.\n");
                 score = score - 100;
                 streak = 0;
             }
             else if(answer == brr[i]){
-                printf("Your answer is Correct!\n");
+                printf("Your answer is Correct!........ 100 points added.\n");
                 score = score + 100;
                 streak++;
             }
@@ -237,6 +238,7 @@ int main(){
     printf("\n");
     printf("%s WELCOME TO MATHAMANIA\n\n",name);
 
+    // Asking user to play the game
     printf("Do You want to start game? 'y' for yes and 'n' for no: ");
     scanf("%c",&ans);
     switch (ans)
@@ -264,6 +266,8 @@ int main(){
         break;
     } // End Switch
 
+// Difficulty levels:
+    
     printf("Select Difficulty: \n");
     printf("1. Easy    2. Moderate    3. Hard:  ");
     scanf("%d",&diff);
