@@ -9,4 +9,4 @@ Once the game commences, a timer keeps track of the time taken to answer each qu
 High score is permenantly saved on a file. It also keeps track of the current win streak.
 ### Technologies Used:
 >> Conditional Statements >> Loops >> Array >> Functions >>  Files >> Pointers >> Switch-Case
-### Progress: 90% Complete!
+### Progress: 80% Complete!
