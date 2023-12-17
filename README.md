@@ -27,6 +27,15 @@ Previous versions of the game might have lacked a time-based challenge, potentia
 - The code introduces time limits for answering questions in different difficulty levels (10 seconds for easy, 20 seconds for moderate, 30 seconds for hard).
 - It penalizes users with a deduction of 100 points if they exceed the time limit, adding a sense of urgency and encouraging quicker problem-solving abilities.
 
+### 3. Limited Flexibility in Storing Answers
+
+**Problem:**
+Previously, MathaMania confined answers solely within code arrays, hampering the ability to adjust the question-answer bank without code modifications.
+
+**Solution through the Code:**
+- In the updated version, MathaMania employs external text files to store answers (`easy.txt`, `moderate.txt`, `hard.txt`). During runtime, the program reads these files, transferring answers to arrays.
+- This adaptation enhances flexibility, allowing seamless updates to the question-answer bank without necessitating code changes. Such an approach segregates data from code, streamlining maintenance and enabling non-programmers to modify game content.
+
 ## Major Logic/Algorithm Used
 ### Timer and Scoring Logic
 - **Timer Implementation:** The game tracks response time for each question using `difftime`, imposing time limits for different difficulty levels.
@@ -44,6 +53,7 @@ Previous versions of the game might have lacked a time-based challenge, potentia
 - **Code Modularity:** Segregating functionalities into smaller, reusable functions can enhance code readability and maintainability.
 - **Error Handling:** Implementing robust error handling mechanisms to manage unexpected inputs or file handling issues can fortify the program's stability.
 - **Memory Optimization:** Evaluating memory usage and optimizing array sizes could improve efficiency, especially with large question banks.
+- **Pause/Resume Feature:** Implementing a pause/resume feature in MathaMania could allow seamless interruption management, granting users control and fostering engagement for longer gameplay sessions.
 
 ## Conclusion
 MathaMania offers an engaging platform for users to refine their mathematical skills through interactive quizzes. Despite its functional implementation, certain enhancements in input handling, file operations, and code structure could further refine its efficiency and robustness.
